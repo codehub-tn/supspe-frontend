@@ -1,0 +1,18 @@
+name: "Lint & format"
+on: push
+jobs:
+    check:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: Use Node.js 17.x
+              uses: actions/setup-node@v2
+              with:
+                  node-version: 17.9
+            - name: install dependencies
+              run: npm i
+            - name: format
+              run: npm run format:check
+            - name: lint
+              run: npm run lint:check
