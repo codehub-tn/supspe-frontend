@@ -1,11 +1,6 @@
 import React from "react";
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import { AuthControlsLoggedIn,AuthControlsGuest} from "./AuthControls";
+import { AppBar, Container, Toolbar, Typography } from "@mui/material";
+import { AuthControlsLoggedIn, AuthControlsGuest } from "./AuthControls";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { HOME } from "constants/routing";
