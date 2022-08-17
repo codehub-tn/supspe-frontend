@@ -7,9 +7,11 @@ import {
   VERIFY,
   FORGOT,
   RESET,
+  EXERCISE,
 } from "constants/routing";
 import { Box, CircularProgress, styled } from "@mui/material";
 const Home = lazy(() => import("pages/Home"));
+const Exercise = lazy(() => import("pages/Exercise"));
 const Reset = lazy(() => import("pages/Reset"));
 const Register = lazy(() => import("pages/Register"));
 const Login = lazy(() => import("pages/Login"));
@@ -27,6 +29,7 @@ const RouterConfig = () => {
         <Route path={FORGOT} element={<Forgot />} />
         <Route path={RESET} element={<Reset />} />
         <Route path={VERIFY} element={<Verify />} />
+        <Route path={EXERCISE} element={<Exercise />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>

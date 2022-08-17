@@ -9,6 +9,7 @@ export const CATEGORIE = "/categories/:categorie_name";
 export const ADMIN = "/admin";
 export const ACCOUNT = "/account";
 export const SHOPS = "/shops/browse";
+export const EXERCISE = "/exercise";
 export const STORE = (storeName) => `/stores/${storeName}`;
 
 const routing = {
@@ -24,6 +25,7 @@ const routing = {
   ACCOUNT,
   ADMIN,
   RESET,
+  EXERCISE,
 };
 
 export default routing;
