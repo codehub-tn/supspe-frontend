@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
-import React from "react";
 import { Helmet } from "react-helmet";
-
+import PropTypes from "prop-types";
 const Layout = ({ title, children }) => {
   return (
     <>
@@ -15,6 +14,6 @@ const Layout = ({ title, children }) => {
   );
 };
 
-Layout.defaultProps = {};
+Layout.defaultProps = { children: PropTypes.element.isRequired };
 
 export { Layout };

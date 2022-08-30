@@ -13,10 +13,7 @@ const toastsSlice = createSlice({
       if (!severity) {
         severity = "info";
       }
-      state.toasts = [
-        ...state.toasts,
-        { message, severity, key: new Date().getTime() },
-      ];
+      state.toasts = [...state.toasts, { message, severity, key: new Date().getTime() }];
     },
     setToasts: (state, action) => {
       state.toasts = action.payload;

@@ -1,9 +1,9 @@
 import { Button as MuiButton, Stack, IconButton } from "@mui/material";
-import { Link } from "react-router-dom";
 import { LOGIN, REGISTER } from "constants/routing";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountMenu from "./AccountMenu";
+import Link from "next/link";
 
 const AuthControlsLoggedIn = () => {
   return (
@@ -30,7 +30,7 @@ const AuthControlsGuest = () => {
 
 const Button = ({ to, children }) => {
   return (
-    <Link to={to}>
+    <Link href={to}>
       <MuiButton variant="contained" color="secondary">
         {children}
       </MuiButton>

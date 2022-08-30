@@ -9,29 +9,23 @@ const initialState = {
   error: null,
 };
 
-export const register = createAsyncThunk(
-  "auth/register",
-  async (formData, thunkAPI) => {
-    try {
-      const response = await authServices.register(formData);
-      return response;
-    } catch (error) {
-      return errorHandler(error, thunkAPI);
-    }
+export const register = createAsyncThunk("auth/register", async (formData, thunkAPI) => {
+  try {
+    const response = await authServices.register(formData);
+    return response;
+  } catch (error) {
+    return errorHandler(error, thunkAPI);
   }
-);
+});
 
-export const login = createAsyncThunk(
-  "auth/login",
-  async (formData, thunkAPI) => {
-    try {
-      const response = await authServices.login(formData);
-      return response;
-    } catch (error) {
-      return errorHandler(error, thunkAPI);
-    }
+export const login = createAsyncThunk("auth/login", async (formData, thunkAPI) => {
+  try {
+    const response = await authServices.login(formData);
+    return response;
+  } catch (error) {
+    return errorHandler(error, thunkAPI);
   }
-);
+});
 
 export const sendEmailVerification = createAsyncThunk(
   "auth/sendEmailVerification",
@@ -45,17 +39,14 @@ export const sendEmailVerification = createAsyncThunk(
   }
 );
 
-export const verifyEmail = createAsyncThunk(
-  "auth/verify",
-  async (token, thunkAPI) => {
-    try {
-      const response = await authServices.verifyEmail(token);
-      return response;
-    } catch (error) {
-      return errorHandler(error, thunkAPI);
-    }
+export const verifyEmail = createAsyncThunk("auth/verify", async (token, thunkAPI) => {
+  try {
+    const response = await authServices.verifyEmail(token);
+    return response;
+  } catch (error) {
+    return errorHandler(error, thunkAPI);
   }
-);
+});
 
 export const forgotPassword = createAsyncThunk(
   "auth/forgot_password",
@@ -69,20 +60,14 @@ export const forgotPassword = createAsyncThunk(
   }
 );
 
-export const resetPassword = createAsyncThunk(
-  "auth/reset_password",
-  async (data, thunkAPI) => {
-    try {
-      const response = await authServices.resetPassword(
-        data.password,
-        data.token
-      );
-      return response;
-    } catch (error) {
-      return errorHandler(error, thunkAPI);
-    }
+export const resetPassword = createAsyncThunk("auth/reset_password", async (data, thunkAPI) => {
+  try {
+    const response = await authServices.resetPassword(data.password, data.token);
+    return response;
+  } catch (error) {
+    return errorHandler(error, thunkAPI);
   }
-);
+});
 
 const authSlice = createSlice({
   name: "auth",
@@ -150,30 +135,6 @@ const authSlice = createSlice({
         state.status = "error";
         state.message = action.payload;
       });
-    // .addCase(sendEmailVerification.pending, (state) => {
-    //   state.isLoading = true;
-    // })
-    // .addCase(sendEmailVerification.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    //   state.isSuccess = true;
-    // })
-    // .addCase(sendEmailVerification.rejected, (state, action) => {
-    //   state.isLoading = false;
-    //   state.isError = true;
-    //   state.message = action.payload;
-    // })
-    // .addCase(verify.pending, (state) => {
-    //   state.isLoading = true;
-    // })
-    // .addCase(verify.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    //   state.isSuccess = true;
-    // })
-    // .addCase(verify.rejected, (state, action) => {
-    //   state.isLoading = false;
-    //   state.isError = true;
-    //   state.message = action.payload;
-    // });
   },
 });
 

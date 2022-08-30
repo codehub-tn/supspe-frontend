@@ -23,19 +23,14 @@ const forgotPassword = async (formData) => {
 };
 
 const resetPassword = async (password, token) => {
-  const response = await axiosPrivate.post(
-    `${authAPI.RESET_PASSWORD}?token=${token}`,
-    {
-      password,
-    }
-  );
+  const response = await axiosPrivate.post(`${authAPI.RESET_PASSWORD}?token=${token}`, {
+    password,
+  });
   return response.data;
 };
 
 const verifyEmail = async (token) => {
-  const response = await axiosPrivate.post(
-    `${authAPI.VERIFY_EMAIL}?token=${token}`
-  );
+  const response = await axiosPrivate.post(`${authAPI.VERIFY_EMAIL}?token=${token}`);
   return response.data;
 };
 

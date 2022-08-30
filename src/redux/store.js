@@ -2,15 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./auth.slice";
 import toastsReducer from "./toasts.slice";
 import { combineReducers } from "redux";
-import {
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 const authPersistConfig = {
